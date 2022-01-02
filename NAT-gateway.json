@@ -1,0 +1,22 @@
+
+{
+    "mode": "All",
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Network/natGateways"
+          },
+          {
+            "field": "Microsoft.Network/natGateways/publicIpAddresses[*].id",
+            "exists": "True"
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    },
+    "parameters": {}
+}
